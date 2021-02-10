@@ -29,3 +29,39 @@ kubectl delete kv kubevirt -n kubevirt
 kubectl delete ns kubevirt
 ```
 
+Creating a virtual machine:
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubevirt/demo/master/manifests/vm.yaml
+```
+
+Get the image list:
+```bash
+kubectl get vm
+```
+
+To start a VM you can use, this will create a VM instance (VMI)
+```bash
+virtctl start testvm
+```
+
+To shut the VM down again:
+```bash
+virtctl stop testvm
+```
+
+To delete VM:
+```bash
+kubectl delete vm testvm
+```
+
+Connect to the serial console:
+```bash
+virtctl console testvm
+```
+
+Connect to the graphical display:
+```bash
+virtctl vnc testvm
+```
+
+
