@@ -10,6 +10,7 @@ metadata:
   namespace: cdi
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
+    nginx.org/client-max-body-size: 0
 spec:
   tls:
     - hosts:
