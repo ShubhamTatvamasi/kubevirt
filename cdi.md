@@ -6,18 +6,18 @@ kubectl apply -f - << EOF
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: uploadproxy
+  name: cdi-uploadproxy
   namespace: cdi
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
-    nginx.org/client-max-body-size: 0
+    nginx.org/client-max-body-size: 0m
 spec:
   tls:
     - hosts:
-      - uploadproxy.k8s.shubhamtatvamasi.com
-      secretName: letsencrypt-uploadproxy
+      - cdi-uploadproxy.k8s.shubhamtatvamasi.com
+      secretName: letsencrypt-cdi-uploadproxy
   rules:
-    - host: uploadproxy.k8s.shubhamtatvamasi.com
+    - host: cdi-uploadproxy.k8s.shubhamtatvamasi.com
       http:
         paths:
         - backend:
