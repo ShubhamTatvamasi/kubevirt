@@ -1,19 +1,27 @@
 # cdi
 
-Create a volume:
+setup Ingress for cdi-uploadproxy:
 ```bash
 kubectl apply -f - << EOF
-apiVersion: v1
-kind: PersistentVolume
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
 metadata:
-  name: pv0001
+  name: cdi-uploadproxy
+  namespace: cdi
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
-  accessModes:
-    - ReadWriteOnce
-  capacity:
-    storage: 5Gi
-  hostPath:
-    path: /data/pv0001/
+  tls:
+    - hosts:
+      - cdi-uploadproxy.k8s.shubhamtatvamasi.com
+      secretName: letsencrypt-cdi-uploadproxy
+  rules:
+    - host: cdi-uploadproxy.k8s.shubhamtatvamasi.com
+      http:
+        paths:
+        - backend:
+            serviceName: cdi-uploadproxy
+            servicePort: 443
 EOF
 ```
 
