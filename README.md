@@ -22,3 +22,10 @@ curl -L -o virtctl "https://github.com/kubevirt/kubevirt/releases/download/${VER
 chmod +x virtctl
 sudo install virtctl /usr/local/bin
 ```
+
+Delete kubevirt:
+```bash
+kubectl delete kv kubevirt -n kubevirt
+kubectl delete ns kubevirt
+```
+
