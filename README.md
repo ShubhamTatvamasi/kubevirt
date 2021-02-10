@@ -13,10 +13,11 @@ kubectl create -f "https://github.com/kubevirt/kubevirt/releases/download/${VERS
 
 Install Containerized Data Importer (CDI)
 ```bash
-VERSION=$(curl -s https://github.com/kubevirt/containerized-data-importer/releases/latest | grep -o "v[0-9]\.[0-9]*\.[0-9]*")
-echo $VERSION
-kubectl create -f https://github.com/kubevirt/containerized-data-importer/releases/download/$VERSION/cdi-operator.yaml
-kubectl create -f https://github.com/kubevirt/containerized-data-importer/releases/download/$VERSION/cdi-cr.yaml
+VERSION=$(curl -s https://github.com/kubevirt/containerized-data-importer/releases/latest | \
+  grep -o "v[0-9]\.[0-9]*\.[0-9]*")
+echo ${VERSION}
+kubectl create -f "https://github.com/kubevirt/containerized-data-importer/releases/download/${VERSION}/cdi-operator.yaml"
+kubectl create -f "https://github.com/kubevirt/containerized-data-importer/releases/download/${VERSION}/cdi-cr.yaml"
 ```
 
 Install virtctl:
