@@ -80,3 +80,8 @@ Check vmi:
 kubectl get vmi
 ```
 
+Connect via VNC:
+```bash
+virtctl vnc cirros-vm
+```
+
