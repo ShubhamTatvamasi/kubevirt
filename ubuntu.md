@@ -1,7 +1,7 @@
 Create ubuntu image:
 ```bash
 virtctl image-upload dv ubuntu-vm-dv \
-  --size=1.3Gi \
+  --size=1.5Gi \
   --image-path=/root/ubuntu-20.04.2-live-server-amd64.iso \
   --uploadproxy-url=https://cdi-uploadproxy.k8s.shubhamtatvamasi.com
 ```
