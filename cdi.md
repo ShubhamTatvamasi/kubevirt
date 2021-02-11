@@ -40,6 +40,17 @@ Check data volume status:
 kubectl get dv
 ```
 
+Enable software emulation:
+```yaml
+kubectl edit -n kubevirt kubevirt kubevirt
+
+    spec:
+      ...
+      configuration:
+        developerConfiguration:
+          useEmulation: true
+```
+
 Create Virtual Machine Instance:
 ```
 kubectl apply -f - << EOF
