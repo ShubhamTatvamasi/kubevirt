@@ -15,7 +15,9 @@ Install Containerized Data Importer (CDI)
 ```bash
 VERSION=$(curl -s https://github.com/kubevirt/containerized-data-importer/releases/latest | \
   grep -o "v[0-9]\.[0-9]*\.[0-9]*")
+
 echo ${VERSION}
+
 kubectl create -f "https://github.com/kubevirt/containerized-data-importer/releases/download/${VERSION}/cdi-operator.yaml"
 kubectl create -f "https://github.com/kubevirt/containerized-data-importer/releases/download/${VERSION}/cdi-cr.yaml"
 ```
@@ -25,6 +27,7 @@ Install virtctl:
 VERSION=$(kubectl get kubevirt.kubevirt.io/kubevirt -n kubevirt -o=jsonpath="{.status.observedKubeVirtVersion}")
 ARCH=$(uname -s | tr A-Z a-z)-$(uname -m | sed 's/x86_64/amd64/') || windows-amd64.exe
 
+echo ${VERSION}
 echo ${ARCH}
 
 curl -L -o virtctl "https://github.com/kubevirt/kubevirt/releases/download/${VERSION}/virtctl-${VERSION}-${ARCH}"
