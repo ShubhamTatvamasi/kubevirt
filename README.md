@@ -43,6 +43,8 @@ kubectl delete ns kubevirt
 
 Creating a virtual machine:
 ```bash
+kubectl apply -f https://github.com/kubevirt/kubevirt/raw/main/examples/vm-cirros.yaml
+
 kubectl apply -f https://raw.githubusercontent.com/kubevirt/demo/master/manifests/vm.yaml
 ```
 
