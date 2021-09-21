@@ -44,8 +44,6 @@ kubectl delete ns kubevirt
 Creating a virtual machine:
 ```bash
 kubectl apply -f https://github.com/kubevirt/kubevirt/raw/main/examples/vm-cirros.yaml
-
-kubectl apply -f https://raw.githubusercontent.com/kubevirt/demo/master/manifests/vm.yaml
 ```
 
 Get the image list:
@@ -55,27 +53,27 @@ kubectl get vm
 
 To start a VM you can use, this will create a VM instance (VMI)
 ```bash
-virtctl start testvm
+virtctl start vm-cirros
 ```
 
 To shut the VM down again:
 ```bash
-virtctl stop testvm
+virtctl stop vm-cirros
 ```
 
 To delete VM:
 ```bash
-kubectl delete vm testvm
+kubectl delete vm vm-cirros
 ```
 
 Connect to the serial console:
 ```bash
-virtctl console testvm
+virtctl console vm-cirros
 ```
 
 Connect to the graphical display:
 ```bash
-virtctl vnc testvm
+virtctl vnc vm-cirros
 ```
 
 
