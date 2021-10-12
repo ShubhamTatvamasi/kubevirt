@@ -84,4 +84,10 @@ delete VM:
 kubectl delete vm vm-ubuntu
 ```
 
+expose SSH service:
+```bash
+virtctl expose vmi vm-ubuntu --port=22 --name=vm-ubuntu-ssh --type=NodePort
+```
+
+
 
