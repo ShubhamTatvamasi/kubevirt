@@ -5,7 +5,7 @@ kubectl create -f - << EOF
 apiVersion: cdi.kubevirt.io/v1beta1
 kind: DataVolume
 metadata:
-  name: my-ubuntu-volume
+  name: ubuntu-volume
 spec:
   source:
     http:
