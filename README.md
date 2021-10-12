@@ -1,6 +1,7 @@
 # kubevirt
 
-https://github.com/kubevirt/kubevirt/tree/main/examples
+https://github.com/kubevirt/kubevirt/tree/main/examples \
+https://github.com/davidvossel/kubevirt-demo-manifests
 
 Install kubevirt:
 ```bash
