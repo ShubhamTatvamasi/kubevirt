@@ -6,7 +6,7 @@ kubectl create -f - << EOF
 apiVersion: cdi.kubevirt.io/v1beta1
 kind: DataVolume
 metadata:
-  name: my-data-volume
+  name: cirros-volume
 spec:
   source:
       http:
