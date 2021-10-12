@@ -19,7 +19,7 @@ spec:
 EOF
 ```
 
-create a VM:
+create a VM ID: `ubuntu` Pass: `ubuntu`:
 ```yaml
 kubectl create -f - << EOF
 apiVersion: kubevirt.io/v1
