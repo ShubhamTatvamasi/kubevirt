@@ -24,6 +24,9 @@ kubectl create -f "https://github.com/kubevirt/containerized-data-importer/relea
 
 Install virtctl:
 ```bash
+kubectl krew install virt
+
+# OR
 VERSION=$(kubectl get kubevirt.kubevirt.io/kubevirt -n kubevirt -o=jsonpath="{.status.observedKubeVirtVersion}")
 ARCH=$(uname -s | tr A-Z a-z)-$(uname -m | sed 's/x86_64/amd64/') || windows-amd64.exe
 
