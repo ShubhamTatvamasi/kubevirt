@@ -54,3 +54,19 @@ start vm:
 virtctl start vm-ubuntu-iso
 ```
 
+access console of VM:
+```bash
+virtctl console vm-ubuntu-iso
+```
+
+stop VM:
+```bash
+virtctl stop vm-ubuntu-iso
+```
+
+delete VM:
+```bash
+kubectl delete vm-ubuntu-iso
+```
+
+
