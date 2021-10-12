@@ -20,7 +20,34 @@ spec:
 EOF
 ```
 
-
+create a VM:
+```bash
+kubectl create -f - << EOF
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: vm-cirros-volume
+spec:
+  running: false
+  template:
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: pvcdisk1
+        resources:
+          requests:
+            cpu: 2
+            memory: 512Mi
+      terminationGracePeriodSeconds: 0
+      volumes:
+      - name: pvcdisk1
+        persistentVolumeClaim:
+          claimName: cirros-volume
+EOF
+```
 
 
 ---
