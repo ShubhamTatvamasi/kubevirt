@@ -21,7 +21,7 @@ EOF
 ```
 
 create a VM:
-```bash
+```yaml
 kubectl create -f - << EOF
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
@@ -49,6 +49,10 @@ spec:
 EOF
 ```
 
+start VM:
+```bash
+virtctl start vm-cirros-volume
+```
 
 ---
 
