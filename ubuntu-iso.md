@@ -2,6 +2,7 @@
 
 
 ```yaml
+kubectl create -f - << EOF
 apiVersion: cdi.kubevirt.io/v1beta1
 kind: DataVolume
 metadata:
@@ -17,6 +18,7 @@ spec:
     resources:
       requests:
         storage: 20Gi
+EOF
 ```
 
 
