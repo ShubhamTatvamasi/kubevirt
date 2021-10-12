@@ -72,7 +72,11 @@ virtctl console vm-ubuntu-volume
 stop VM:
 ```bash
 virtctl stop vm-ubuntu-volume
-kubectl delete vm-ubuntu-volume
+```
+
+delete VM:
+```bash
+kubectl delete vm vm-ubuntu-volume
 ```
 
 
