@@ -54,6 +54,11 @@ start VM:
 virtctl start vm-cirros-volume
 ```
 
+stop VM:
+```bash
+virtctl stop vm-cirros-volume
+```
+
 ---
 
 # docker VMI
