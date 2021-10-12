@@ -16,3 +16,8 @@ start vm:
 ```bash
 virtctl start testvm
 ```
+
+get virtual machine image:
+```bash
+kubectl get vmi
+```
