@@ -26,10 +26,15 @@ kubectl create -f - << EOF
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
+  labels:
+    kubevirt.io/vm: vm-cirros-volume
   name: vm-cirros-volume
 spec:
   running: false
   template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-cirros-volume
     spec:
       domain:
         devices:
@@ -37,6 +42,9 @@ spec:
           - disk:
               bus: virtio
             name: pvcdisk1
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
         resources:
           requests:
             cpu: 2
@@ -46,6 +54,11 @@ spec:
       - name: pvcdisk1
         persistentVolumeClaim:
           claimName: cirros-volume
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userData: |
+            #!/bin/sh
+            echo 'printed from cloud-init userdata'
 EOF
 ```
 
