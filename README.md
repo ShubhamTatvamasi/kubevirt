@@ -2,7 +2,7 @@
 
 Install kubevirt:
 ```bash
-VERSION=$$(curl -s https://github.com/kubevirt/kubevirt/releases/latest | \
+VERSION=$(curl -s https://github.com/kubevirt/kubevirt/releases/latest | \
   grep -o "v[0-9]\.[0-9]*\.[0-9]*")
 
 echo ${VERSION}
