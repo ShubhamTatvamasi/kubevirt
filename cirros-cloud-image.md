@@ -22,6 +22,11 @@ EOF
 
 
 
+
+---
+
+# docker VMI
+
 docker image:
 ```yaml
 kubectl create -f - << EOF
