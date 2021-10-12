@@ -25,10 +25,15 @@ kubectl create -f - << EOF
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
+  labels:
+    kubevirt.io/vm: vm-ubuntu
   name: vm-ubuntu
 spec:
   running: false
   template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-ubuntu
     spec:
       domain:
         devices:
