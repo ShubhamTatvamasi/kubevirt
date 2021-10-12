@@ -55,9 +55,7 @@ spec:
           claimName: my-ubuntu-volume
       - name: cloudinitdisk
         cloudInitNoCloud:
-          userData: |
-            #!/bin/sh
-            echo 'printed from cloud-init userdata'
+          userDataBase64: I2Nsb3VkLWNvbmZpZwpwYXNzd29yZDogdWJ1bnR1CnNzaF9wd2F1dGg6IFRydWUKY2hwYXNzd2Q6IHsgZXhwaXJlOiBGYWxzZSB9Cg==
 EOF
 ```
 
