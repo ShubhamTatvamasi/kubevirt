@@ -57,6 +57,7 @@ virtctl start vm-cirros-volume
 stop VM:
 ```bash
 virtctl stop vm-cirros-volume
+kubectl delete vm vm-cirros-volume
 ```
 
 ---
