@@ -2,8 +2,8 @@
 
 Install kubevirt:
 ```bash
-export VERSION=$(curl -s https://api.github.com/repos/kubevirt/kubevirt/releases | \
-  grep tag_name | grep -v -- '-rc' | head -1 | awk -F': ' '{print $2}' | sed 's/,//' | xargs)
+export VERSION=$$(curl -s https://github.com/kubevirt/kubevirt/releases/latest | \
+  grep -o "v[0-9]\.[0-9]*\.[0-9]*")
 
 echo ${VERSION}
 
