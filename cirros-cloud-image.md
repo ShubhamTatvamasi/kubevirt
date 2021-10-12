@@ -67,6 +67,11 @@ start VM:
 virtctl start vm-cirros-volume
 ```
 
+access shell of VM:
+```bash
+virtctl console vm-cirros-volume
+```
+
 stop VM:
 ```bash
 virtctl stop vm-cirros-volume
