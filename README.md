@@ -1,5 +1,7 @@
 # kubevirt
 
+https://github.com/kubevirt/kubevirt/tree/main/examples
+
 Install kubevirt:
 ```bash
 VERSION=$(curl -s https://github.com/kubevirt/kubevirt/releases/latest | \
