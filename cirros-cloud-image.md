@@ -20,3 +20,31 @@ spec:
 EOF
 ```
 
+
+
+docker image:
+```yaml
+kubectl create -f - << EOF
+apiVersion: kubevirt.io/v1
+kind: VirtualMachineInstance
+metadata:
+  labels:
+    kubevirt.io/flavor: small
+  name: vmi-flavor-small
+spec:
+  domain:
+    devices:
+      disks:
+      - disk:
+          bus: virtio
+        name: containerdisk
+    resources:
+      requests:
+        memory: 128Mi
+  terminationGracePeriodSeconds: 0
+  volumes:
+  - containerDisk:
+      image: kubevirt/cirros-container-disk-demo:devel
+    name: containerdisk
+EOF
+```
