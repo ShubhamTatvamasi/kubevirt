@@ -9,7 +9,7 @@ metadata:
 spec:
   source:
     http:
-      url: "https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img"
+      url: "http://192.168.5.66/focal-server-cloudimg-amd64.img"
   pvc:
     accessModes:
       - ReadWriteOnce
@@ -25,15 +25,10 @@ kubectl create -f - << EOF
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  labels:
-    kubevirt.io/vm: vm-ubuntu-volume
-  name: vm-ubuntu-volume
+  name: vm-ubuntu
 spec:
   running: false
   template:
-    metadata:
-      labels:
-        kubevirt.io/vm: vm-ubuntu-volume
     spec:
       domain:
         devices:
@@ -52,31 +47,36 @@ spec:
       volumes:
       - name: pvcdisk1
         persistentVolumeClaim:
-          claimName: my-ubuntu-volume
+          claimName: ubuntu-volume
       - name: cloudinitdisk
         cloudInitNoCloud:
           userDataBase64: I2Nsb3VkLWNvbmZpZwpwYXNzd29yZDogdWJ1bnR1CnNzaF9wd2F1dGg6IFRydWUKY2hwYXNzd2Q6IHsgZXhwaXJlOiBGYWxzZSB9Cg==
 EOF
 ```
 
+get list of VMs:
+```bash
+kubectl get vm
+```
+
 start VM:
 ```bash
-virtctl start vm-ubuntu-volume
+virtctl start vm-ubuntu
 ```
 
 access console of VM:
 ```bash
-virtctl console vm-ubuntu-volume
+virtctl console vm-ubuntu
 ```
 
 stop VM:
 ```bash
-virtctl stop vm-ubuntu-volume
+virtctl stop vm-ubuntu
 ```
 
 delete VM:
 ```bash
-kubectl delete vm vm-ubuntu-volume
+kubectl delete vm vm-ubuntu
 ```
 
 
