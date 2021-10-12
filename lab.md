@@ -21,3 +21,20 @@ get virtual machine image:
 ```bash
 kubectl get vmi
 ```
+
+access shell of vmi:
+```bash
+virtctl console testvm
+```
+
+stop vmi:
+```bash
+virtctl stop testvm
+```
+
+delete vm:
+```bash
+kubectl delete vm testvm
+```
+
+
