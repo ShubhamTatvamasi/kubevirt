@@ -66,7 +66,7 @@ virtctl stop vm-ubuntu-iso
 
 delete VM:
 ```bash
-kubectl delete vm-ubuntu-iso
+kubectl delete vm vm-ubuntu-iso
 ```
 
 
