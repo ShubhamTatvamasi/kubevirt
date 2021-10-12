@@ -1,8 +1,7 @@
 # Create Container Disks
 
-https://github.com/kubevirt/kubevirt/blob/main/docs/container-register-disks.md
-
-
+https://github.com/kubevirt/kubevirt/blob/main/docs/container-register-disks.md \
+https://kubevirt.io/user-guide/virtual_machines/disks_and_volumes/
 
 ```Dockerfile
 FROM scratch
