@@ -19,7 +19,8 @@ spec:
         devices:
           disks:
           - name: cirros-pvc
-            lun: {}
+            disk:
+              bus: virtio
           - name: containerdisk
             disk:
               bus: virtio
