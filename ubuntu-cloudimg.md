@@ -32,7 +32,7 @@ spec:
       volumes:
       - name: containerdisk
         containerDisk:
-          image: shubhamtatvamasi/focal-server-cloudimg-amd64
+          image: shubhamtatvamasi/focal-server-cloudimg-amd64:0.1.0
       - name: cloudinitdisk
         cloudInitNoCloud:
           userDataBase64: I2Nsb3VkLWNvbmZpZwpwYXNzd29yZDogdWJ1bnR1CnNzaF9wd2F1dGg6IFRydWUKY2hwYXNzd2Q6IHsgZXhwaXJlOiBGYWxzZSB9Cg==
