@@ -18,7 +18,7 @@ spec:
       domain:
         devices:
           disks:
-          - name: mypvcdisk
+          - name: cirros-pvc
             lun: {}
           - name: containerdisk
             disk:
