@@ -18,23 +18,30 @@ spec:
       domain:
         devices:
           disks:
-          - disk:
+          - name: mypvcdisk
+            lun: {}
+          - name: containerdisk
+            disk:
               bus: virtio
-            name: containerdisk
-          - disk:
+          - name: cloudinitdisk
+            disk:
               bus: virtio
-            name: cloudinitdisk
         resources:
           requests:
             cpu: 4
             memory: 4G
       terminationGracePeriodSeconds: 0
       volumes:
+      - name: cirros-pvc
+        persistentVolumeClaim:
+          claimName: cirros-pvc
       - name: containerdisk
         containerDisk:
           image: shubhamtatvamasi/cirros-disk:0.1.0
       - name: cloudinitdisk
         cloudInitNoCloud:
-          userDataBase64: I2Nsb3VkLWNvbmZpZwpwYXNzd29yZDogdWJ1bnR1CnNzaF9wd2F1dGg6IFRydWUKY2hwYXNzd2Q6IHsgZXhwaXJlOiBGYWxzZSB9Cg==
+          userData: |
+            #!/bin/sh
+            echo 'printed from cloud-init userdata'
 EOF
 ```
