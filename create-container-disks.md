@@ -11,6 +11,6 @@ ADD --chown=107:107 ubuntu.qcow2 /disk/
 
 build docker image:
 ```bash
-docker build -t shubhamtatvamasi/ubuntu2004:0.1.0 .
-docker push shubhamtatvamasi/ubuntu2004:0.1.0
+docker build -t shubhamtatvamasi/ubuntu:0.1.0 .
+docker push shubhamtatvamasi/ubuntu:0.1.0
 ```
