@@ -6,7 +6,7 @@ https://kubevirt.io/user-guide/virtual_machines/disks_and_volumes/
 ```Dockerfile
 FROM scratch
 
-ADD ubuntu2004.qcow2 /disk/
+ADD --chown=107:107 ubuntu.qcow2 /disk/
 ```
 
 build docker image:
